@@ -3,9 +3,11 @@
 
 public class MyLinkedList {
     private Node head;
+	private Node tail;
 
     public MyLinkedList() {
 	head = new Node("");
+	tail = head;
     }
 	
 	public String toString() {
@@ -20,11 +22,15 @@ public class MyLinkedList {
 	
     public void add(String s) {
 	Node tmp = new Node(s);
-	tmp.setNext(head.getNext());
-	head.setNext(tmp);
+	tail.setNext(tmp);
+	tail = tmp;
     }
 	
 	public void add(int i, String s) {
+		if (i == this.length() - 1){
+			this.add(s);
+		}
+		else{
 		int count = 0;
 		Node temp = head.getNext();
 		while (count < i - 1){
@@ -34,6 +40,7 @@ public class MyLinkedList {
 		Node tmp = new Node(s);
 		tmp.setNext(temp.getNext());
 		temp.setNext(tmp);
+		}
 	}
 	
 	public String get(int i){
@@ -56,6 +63,7 @@ public class MyLinkedList {
 		String ret = temp.getData();
 		temp.setData(s);
 		return ret;
+		
 	}
 
 	public String remove(int i) {
@@ -67,6 +75,9 @@ public class MyLinkedList {
 		}
 		String ret = temp.getNext().getData();
 		temp.setNext(temp.getNext().getNext());
+		if (i == this.length() - 1){
+			tail = temp;
+		}
 		return ret;
 	}
 	
