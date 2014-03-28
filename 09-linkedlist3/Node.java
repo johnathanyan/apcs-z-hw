@@ -1,27 +1,24 @@
-import java.util.*;
-import java.io.*;
-
 public class Node {
-    private E data;
-    private Node<E> next;
+    private String data;
+    private Node next;
 
-    public Node(E s) {
+    public Node(String s) {
 	data=s;
     }
-    public void setData(E s) {
+    public void setData(String s) {
 	data = s;
     }
-    public E getData() {
+    public String getData() {
 	return data;
     }
-    public void setNext(Node<E> n){
+    public void setNext(Node n){
 	next = n;
     }
-    public Node<E> getNext() {
+    public Node getNext() {
 	return next;
     }
 
-    public E toString() {
+    public String toString() {
 	return "Data: "+data;// +" Next: "+next;
     }
 }
