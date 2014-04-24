@@ -1,0 +1,21 @@
+1. makeMove(), act(), getActors(), processActors(), getMoveLocations(), selectMoveLocation()
+2. makeMove(), getActors(), processActors(), getMoveLocations(), selectMoveLocation()
+3. It needs to override b/c the actors are not the same for all subclasses.
+4. Make neighbors move, change color, turn around.
+5. makeMove(), selectMoveLocation(), and getMoveLocations()
+6. Actor already has a constructor, and critter will call super() when instantiated.
+
+1. In the ChameleonCritter, methods are overridden, therefore they will act differently.
+2. To go through with the action; the makeMove inside of the ChameleonCritter class only changes direction.
+3. Change the makeMove method.
+4. The actors btwn Critter and ChameleonCritter are the same.
+5. Actor
+6. getGrid() inside Actor.
+
+1. Inherits the correct method from critter.
+2. Any actors in front or diagonal (in front) of the crab critter will be eaten.
+3. Gives possible coordinates where actors can be eaten.
+4. (4,3), (4,4), (4,5)
+5. They move in a random direction. Crab critters move left and right only.
+6. if the makeMove loc == currentLoc
+7. Crab critters only eats actors that are not rocks nor critters.
