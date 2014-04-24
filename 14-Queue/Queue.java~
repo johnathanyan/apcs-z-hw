@@ -1,0 +1,41 @@
+public class Queue{
+    Node head;
+    Node tail;
+
+    public void enqueue(Node x){
+	if (isEmpty()){
+	    head = x;
+	    tail = x;
+	}
+	else{
+	    tail.setNext(x);
+	    tail = tail.getNext();
+	}
+    }
+    
+    public Node dequeue(){
+	if (isEmpty())
+	    return null;
+	else{
+	    Node old = head;
+	    head = head.getNext();
+	    return old;
+	}
+	// removes and returns the item first
+	// in teh line
+    }
+
+    public boolean isEmpty(){
+	return (null == empty);
+    }
+
+    public Node front(){
+	return head;
+    }
+
+    public String toString(){
+	String ret = "";
+	while (head != null){
+	    
+
+}
