@@ -24,6 +24,12 @@ public class Node {
 	public Node getRight() {
 	return right;
     }
+    public boolean hasRight() {
+        return (right != null);
+    }
+    public boolean hasLeft() {
+        return (left != null);
+    }
 
     public String toString() {
 	return "Data: "+data;// +" Next: "+next;
