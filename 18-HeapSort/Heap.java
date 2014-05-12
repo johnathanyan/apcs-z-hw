@@ -26,30 +26,55 @@ public class Heap{
 		// Left node: 2n
 		// Right node: 2n+1
 
-		public void heapify(int[] data){
-			int count = 0;
-			while (count * 2 <= data.length){
-				Node head = new Node(data[count]);
-				if (2 * count < data.length()){
-					Node left = new Node(data[2 * count])
-					head.setLeft(left);
-					if (2 * count + 1 < data.length()){
-						Node right = new Node(data[2 * count + 1])
-						head.setRight(right);
-					}
-					else
-						break;
-				}
-				count++;
+		int[] data;
+		int size;
+		int last;
+
+		public Heap(int x){
+			data = new int[x]
+			size = x;
+			last = 0;
+		}
+
+		public void insert(int x){
+			if (last + 1 > size)
+				return;
+			else{	
+				last++;
+				data[last] = x;
+				sift();
 			}
 		}
 
-		// period ended
-		// wondering how to sift down and what helper function to use for heapify
-		public void heapSort(int[] data, int length){
-			int[] sort = quicksort(data);
-
-
+		public void sift(){
+			for (int x = last; x > 1; x/=2){
+				int up = x/2;
+				if(data[up] >= data[x])
+					return;
+				int old = data[x];
+				data[x] = data[up];
+				data[up] = old;
+			}
 		}
+
+		public void push(){
+			for (int x = last; x*2 <= last && data[x*2] > data[x]; x *= 2){
+				if (x * 2 <= last)
+					return;
+				int old = data[i];
+				data[x] = data[x * 2];
+				data[x * 2] = old;
+			} // * 2 signifies child
+		}
+
+		public int remove(){
+			int temp = data[1];
+			data[1] = data[last];
+			last--;
+			push();
+			return temp;
+		}
+
+		//find median, remove median
 
 }
