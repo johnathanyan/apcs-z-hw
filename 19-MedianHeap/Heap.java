@@ -1,31 +1,5 @@
 public class Heap{
 
-	/*
-		Node head;
-		int[] data;
-		int size;
-
-		public Heap(int n){
-			data = new int[n];
-			size = 0;
-		}
-
-		public insert(Node n){
-			Node temp = head
-		}
-
-		public Node findMax(){
-			return head;
-		}
-
-		public int[] heapify(int[] data){
-
-		}
-	*/
-		// Parent node: n
-		// Left node: 2n
-		// Right node: 2n+1
-
 		int[] data;
 		int size;
 		int last;
